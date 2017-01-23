@@ -1,6 +1,7 @@
 # i18n-timezones
 
 [Xliff](http://www.oasis-open.org/committees/xliff/documents/xliff-specification.htm) [Time Zone Database](https://www.iana.org/time-zones)'s translation tool and files, automated by [Google Translate API](https://cloud.google.com/translate/docs/languages).
+
 Give your users a selection of supported timezones in their own language.
 
 ![Alt text](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
