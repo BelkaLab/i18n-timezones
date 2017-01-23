@@ -44,5 +44,3 @@ if [[ $? -eq 0 ]]; then
     docker run -it --rm --name translations-tools -v "$PWD":/usr/src/myapp --link translations-tools-postgres:pg ${optDocker} -w /usr/src/myapp translations-tools python xliffTimeZone.py ${optApp}
 fi
 
-#docker run -it --rm --name translations-tools -v "$PWD":/usr/src/myapp --link translations-tools-postgres:pg -w /usr/src/myapp translations-tools python xliffTimeZone.py
-

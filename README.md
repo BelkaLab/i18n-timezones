@@ -6,7 +6,7 @@
 
 
 ## Intro
-If, in your application or website, timezone and multilang matters and you want cater the users for a selection
+If, in your application or website, timezone and multilang matters and you want give the users a selection
 of supported timezones in their own languages, this is the repository for you.
 
 The files are not translated manually, but they take advantage of the google translation API. Because of this, some
@@ -24,9 +24,10 @@ If you want to translate it your own, or a translation is missing, you need Dock
 of the `run.sh`:
 
 ```bash
-run.sh <>
+./run.sh <tag> [<outputFile>] [<devKey>]
 ```
 
+`devKey` can be omitted if the environmental variable `DEVELOPER_KEY` is set
 
 ## Contributors
 - [Matteo Bertamini](https://github.com/bertuz), Developer @[Belka](https://github.com/BelkaLab)
