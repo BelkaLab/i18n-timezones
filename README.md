@@ -1,13 +1,14 @@
 # i18n-timezones
 
 [Xliff](http://www.oasis-open.org/committees/xliff/documents/xliff-specification.htm) [Time Zone Database](https://www.iana.org/time-zones)'s translation tool and files, automated by [Google Translate API](https://cloud.google.com/translate/docs/languages).
+Give your users a selection of supported timezones in their own language.
 
 ![Alt text](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
 
 
 ## Intro
-If, in your application or website, timezone and multilang matters and you want give the users a selection
-of supported timezones in their own languages, this is the repository for you.
+Timezone and multilang matters in your software? You want give the users a selection
+of supported timezones in their own languages? Then, this is the repository for you.
 
 The files are not translated manually, but they take advantage of the google translation API. Because of this, some
 timezone could not have been translated correctly.
