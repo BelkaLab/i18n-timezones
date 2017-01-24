@@ -15,7 +15,7 @@ from language_tags import tags
 from googleapiclient.discovery import build
 import psycopg2
 from xml.etree.ElementTree import Element, SubElement, Comment, ElementTree
-from ElementTree_pretty import prettify
+# from ElementTree_pretty import prettify
 
 
 def main(argv):
@@ -78,7 +78,6 @@ def main(argv):
     #
     # 2 translation
     #
-    # lang tag verification
     conn_string = "host='pg' dbname='postgres' user='postgres' password='mysecretpassword'"
     conn = psycopg2.connect(conn_string)
     cursor = conn.cursor()
@@ -95,7 +94,7 @@ def main(argv):
     body = SubElement(file, 'body')
 
     #
-    # 2 reading file and translating it
+    # 2 reading timezones and translating it
     #
     cursor.execute("SELECT tz.name AS measure FROM pg_timezone_names() tz;")
     timezones = cursor.fetchall()
@@ -129,7 +128,7 @@ def main(argv):
         target = SubElement(transUnit, 'target')
         target.text = u'{}'.format(lineTranslated)
 
-    print "Translated. Writing..."
+    print "Translated. Writing xliff..."
 
     ElementTree(root).write(outputfile)
 
