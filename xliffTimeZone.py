@@ -15,7 +15,29 @@ from language_tags import tags
 from googleapiclient.discovery import build
 import psycopg2
 from xml.etree.ElementTree import Element, SubElement, Comment, ElementTree
+import re, htmlentitydefs
 # from ElementTree_pretty import prettify
+
+def unescape(text):
+    def fixup(m):
+        text = m.group(0)
+        if text[:2] == "&#":
+            # character reference
+            try:
+                if text[:3] == "&#x":
+                    return unichr(int(text[3:-1], 16))
+                else:
+                    return unichr(int(text[2:-1]))
+            except ValueError:
+                pass
+        else:
+            # named entity
+            try:
+                text = unichr(htmlentitydefs.name2codepoint[text[1:-1]])
+            except KeyError:
+                pass
+        return text # leave as is
+    return re.sub("&#?\w+;", fixup, text)
 
 
 def main(argv):
@@ -106,7 +128,7 @@ def main(argv):
         print "Translating: {}".format(timezone[0])
 
         # parse string
-        normalizedLine = unicode(timezone[0].replace(u'_', u' ').replace(u'"', u''))
+        normalizedLine = u'"' + unicode(timezone[0].replace(u'_', u' ').replace(u'"', u'')) + u'"'
         lineTranslated = u''
 
         sublines = normalizedLine.split(u'/')
@@ -118,10 +140,10 @@ def main(argv):
                 q=[word]
             ).execute()
 
-            lineTranslated += unicode(u'/{}'.format(wordTranslated['translations'][0]['translatedText']))
+            lineToken = unescape(wordTranslated['translations'][0]['translatedText']).strip('"').strip(' ').strip('/')
+            lineTranslated += unicode(u'/{}'.format(lineToken))
 
-        lineTranslated = unicode(lineTranslated.strip('/'))
-
+        lineTranslated = lineTranslated.strip('/')
         transUnit = SubElement(body, u'trans-unit', {'id': u'timezone_{}'.format(timezone[0])})
         source = SubElement(transUnit, 'source')
         source.text = u'{}'.format(timezone[0])

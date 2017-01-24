@@ -12,7 +12,7 @@ Timezone and multilang matters in your software? You want give the users a selec
 of supported timezones in their own languages? Then, this is the repository for you.
 
 The files are not translated manually, but they take advantage of the google translation API. Because of this, some
-timezone could not have been translated correctly.
+timezone could not have been translated correctly. We'll be adopting [Geonames' DB](geonames.org) in the near future.
 
 
 ## Ready to use Xliff files
