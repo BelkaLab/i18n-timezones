@@ -28,7 +28,7 @@ If you want to translate it your own, or a translation is missing, you need Dock
 of the `run.sh`:
 
 ```bash
-./run.sh <tag> [<outputFile>] [<devKey>]
+./run.sh <tag> [-o <outputFile>] [-k <devKey>]
 ```
 
 `devKey` can be omitted if the environmental variable `DEVELOPER_KEY` is set
