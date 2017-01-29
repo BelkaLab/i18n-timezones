@@ -18,8 +18,7 @@ if [[ $? -eq 0 ]]; then
     outputFile=""
     tag=""
 
-
-    while [[ $# -gt 1 ]]; do
+    while [[ ${#} -ge 1 ]]; do
         key="$1"
 
         case $key in

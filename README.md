@@ -1,18 +1,20 @@
 # i18n-timezones
-
-[Xliff](http://www.oasis-open.org/committees/xliff/documents/xliff-specification.htm) [Time Zone Database](https://www.iana.org/time-zones)'s translation tool and files, automated by [Google Translate API](https://cloud.google.com/translate/docs/languages).
-
 Give your users a selection of supported timezones in their own language.
+
+[Xliff](http://www.oasis-open.org/committees/xliff/documents/xliff-specification.htm) [Time Zone Database](https://www.iana.org/time-zones)'s translation tool and files, automated by the offical Unicode's [Common Locale Data Repository](http://cldr.unicode.org/) and [Google Translate API](https://cloud.google.com/translate/docs/languages) for the missing items.
 
 ![Alt text](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
 
 
-## Intro
-Timezone and multilang matters in your software? You want give the users a selection
-of supported timezones in their own languages? Then, this is the repository for you.
 
-The files are not translated manually, but they take advantage of the google translation API. Because of this, some
-timezone could not have been translated correctly. We'll be adopting [Geonames' DB](http://www.geonames.org) in the near future.
+## Intro
+You want give the users a selection of supported timezones in their own languages, and `XLIFF` is the
+ format you use, then this is the repository for you.
+
+The files are not translated manually, but they take advantage of the Unicode's Common Locale Data.
+In case some item is missing, google translation API is used to give a fallback translation.
+Because of this, some timezone could not have been translated correctly, although the most common
+timezones and languages should have a pretty good translation thanks to the CLDR.
 
 
 ## Ready to use Xliff files
